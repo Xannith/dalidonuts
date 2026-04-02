@@ -1101,3 +1101,62 @@ body {
   .email-form { flex-direction: column; }
   .footer-links { grid-template-columns: repeat(2, 1fr); }
 }
+
+/* ── LOGO PLACEMENTS ─────────────────────────────────────────── */
+
+/* Nav logo image */
+.nav-logo-img {
+  height: 52px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  transition: transform 0.2s;
+}
+.nav-logo:hover .nav-logo-img { transform: scale(1.04); }
+
+/* Hero logo */
+.hero-logo-wrap {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+.hero-logo {
+  height: 140px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 24px rgba(0,0,0,0.35));
+  animation: hero-logo-float 4s ease-in-out infinite;
+}
+@keyframes hero-logo-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Section logo badge (experience, order) */
+.section-logo-badge {
+  margin-bottom: 20px;
+}
+.section-logo {
+  height: 88px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,0.18));
+}
+
+/* Footer logo */
+.footer-logo-img {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+}
+
+/* Mobile nav logo sizing */
+@media (max-width: 768px) {
+  .nav-logo-img { height: 40px; }
+  .hero-logo    { height: 100px; }
+  .section-logo { height: 64px; }
+  .footer-logo-img { height: 70px; }
+}
