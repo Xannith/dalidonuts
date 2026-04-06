@@ -1160,3 +1160,248 @@ body {
   .section-logo { height: 64px; }
   .footer-logo-img { height: 70px; }
 }
+
+/* ── GLOSSY DIMENSIONAL BUTTONS ─────────────────────────────────
+   Skeuomorphic revival — gel buttons with inner light, depth,
+   and glow. Each button type gets its own material treatment.
+   All effects layer on top of existing styles via specificity.
+*/
+
+/* ── PRIMARY (green candy gel) ──────────────────────────────── */
+.btn-primary {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    #d4ff33 0%,
+    #BFFF00 40%,
+    #8FCC00 100%
+  );
+  border: none;
+  border-radius: 50px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.55) inset,
+    0 -2px 4px rgba(0,0,0,0.25) inset,
+    0 4px 12px rgba(143,204,0,0.45),
+    0 1px 3px rgba(0,0,0,0.3);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+  transition: all 0.18s cubic-bezier(0.23,1,0.32,1);
+  overflow: hidden;
+}
+
+/* inner gloss highlight — top half shimmer */
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 8%; right: 8%;
+  height: 48%;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.55) 0%,
+    rgba(255,255,255,0.08) 100%
+  );
+  border-radius: 50px 50px 60% 60%;
+  pointer-events: none;
+}
+
+/* bottom edge depth */
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 35%;
+  background: linear-gradient(
+    0deg,
+    rgba(0,0,0,0.12) 0%,
+    transparent 100%
+  );
+  border-radius: 0 0 50px 50px;
+  pointer-events: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(
+    180deg,
+    #ddff55 0%,
+    #CCFF00 40%,
+    #9FDD00 100%
+  );
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.65) inset,
+    0 -2px 4px rgba(0,0,0,0.2) inset,
+    0 6px 22px rgba(191,255,0,0.65),
+    0 2px 6px rgba(0,0,0,0.25);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-primary:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.4) inset,
+    0 3px 8px rgba(0,0,0,0.3) inset,
+    0 2px 8px rgba(143,204,0,0.3),
+    0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* ── NAV CTA (orange ember) ──────────────────────────────────── */
+.nav-cta {
+  position: relative !important;
+  background: linear-gradient(
+    180deg,
+    #ff8a00 0%,
+    #FF6600 45%,
+    #cc4400 100%
+  ) !important;
+  border-radius: 50px !important;
+  border: none !important;
+  box-shadow:
+    0 1px 0 rgba(255,180,80,0.6) inset,
+    0 -2px 4px rgba(0,0,0,0.3) inset,
+    0 3px 14px rgba(255,102,0,0.5),
+    0 1px 3px rgba(0,0,0,0.35) !important;
+  text-shadow: 0 1px 2px rgba(100,20,0,0.35) !important;
+  transition: all 0.18s cubic-bezier(0.23,1,0.32,1) !important;
+  overflow: hidden !important;
+}
+
+.nav-cta::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 8%; right: 8%;
+  height: 48%;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.45) 0%,
+    rgba(255,255,255,0.05) 100%
+  );
+  border-radius: 50px 50px 60% 60%;
+  pointer-events: none;
+}
+
+.nav-cta:hover {
+  background: linear-gradient(
+    180deg,
+    #ffaa00 0%,
+    #FF7700 45%,
+    #dd5500 100%
+  ) !important;
+  box-shadow:
+    0 1px 0 rgba(255,200,100,0.65) inset,
+    0 -2px 4px rgba(0,0,0,0.25) inset,
+    0 6px 24px rgba(255,102,0,0.7),
+    0 2px 6px rgba(0,0,0,0.3) !important;
+  transform: translateY(-2px) scale(1.03) !important;
+  color: var(--black) !important;
+}
+
+.nav-cta:active {
+  transform: translateY(1px) scale(0.97) !important;
+}
+
+/* ── GHOST BUTTON (frosted glass depth) ─────────────────────── */
+.btn-ghost {
+  position: relative;
+  background: rgba(255,255,255,0.06) !important;
+  border: 1.5px solid rgba(255,255,255,0.3) !important;
+  border-radius: 50px !important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.15) inset,
+    0 -1px 0 rgba(0,0,0,0.2) inset,
+    0 4px 16px rgba(0,0,0,0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: all 0.2s cubic-bezier(0.23,1,0.32,1) !important;
+  overflow: hidden;
+}
+
+.btn-ghost::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 8%; right: 8%;
+  height: 45%;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.18) 0%,
+    rgba(255,255,255,0.02) 100%
+  );
+  border-radius: 50px 50px 60% 60%;
+  pointer-events: none;
+}
+
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.12) !important;
+  border-color: rgba(255,255,255,0.6) !important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.25) inset,
+    0 -1px 0 rgba(0,0,0,0.15) inset,
+    0 6px 24px rgba(0,0,0,0.35),
+    0 0 20px rgba(255,255,255,0.08);
+  transform: translateY(-2px) !important;
+  color: var(--white) !important;
+}
+
+.btn-ghost:active {
+  transform: translateY(1px) !important;
+  background: rgba(255,255,255,0.04) !important;
+}
+
+/* ── GHOST DARK (for light backgrounds) ─────────────────────── */
+.btn-ghost-dark {
+  position: relative;
+  background: rgba(10,10,10,0.04) !important;
+  border: 1.5px solid rgba(10,10,10,0.2) !important;
+  border-radius: 50px !important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.7) inset,
+    0 -1px 2px rgba(0,0,0,0.12) inset,
+    0 3px 12px rgba(0,0,0,0.1);
+  transition: all 0.2s cubic-bezier(0.23,1,0.32,1) !important;
+  overflow: hidden;
+}
+
+.btn-ghost-dark::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 8%; right: 8%;
+  height: 45%;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.5) 0%,
+    rgba(255,255,255,0.05) 100%
+  );
+  border-radius: 50px 50px 60% 60%;
+  pointer-events: none;
+}
+
+.btn-ghost-dark:hover {
+  background: rgba(10,10,10,0.88) !important;
+  color: var(--white) !important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.15) inset,
+    0 -1px 2px rgba(0,0,0,0.3) inset,
+    0 6px 20px rgba(0,0,0,0.25) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Breathing glow animation on primary CTA in hero */
+@keyframes dd-breathe {
+  0%, 100% {
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.55) inset,
+      0 -2px 4px rgba(0,0,0,0.25) inset,
+      0 4px 12px rgba(143,204,0,0.45),
+      0 1px 3px rgba(0,0,0,0.3);
+  }
+  50% {
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.55) inset,
+      0 -2px 4px rgba(0,0,0,0.25) inset,
+      0 6px 28px rgba(191,255,0,0.7),
+      0 1px 3px rgba(0,0,0,0.3);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-actions .btn-primary {
+    animation: dd-breathe 3s ease-in-out infinite;
+  }
+}
